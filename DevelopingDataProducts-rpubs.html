@@ -795,17 +795,26 @@ hljs.initHighlightingOnLoad();
 
 <p>The application will calculate the estimated due date upon clicking the &#39;Calculate&#39; button.</p>
 
+<p>You can try out the application at: <a href="https://farrahar.shinyapps.io/DevelopingDataProducts/">https://farrahar.shinyapps.io/DevelopingDataProducts/</a> </p>
+
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
-<h3>Links</h3>
+<h3>Some codes</h3>
 <div class="slideContent" >
-<p>The application has been developed and deployed at: <a href="https://farrahar.shinyapps.io/DevelopingDataProducts/">https://farrahar.shinyapps.io/DevelopingDataProducts/</a> </p>
+<p>You can view the entire source codes at: <a href="https://github.com/farrahar/DevelopingDataProducts">https://github.com/farrahar/DevelopingDataProducts</a></p>
 
-<p>You can view the source codes at: <a href="https://github.com/farrahar/DevelopingDataProducts">https://github.com/farrahar/DevelopingDataProducts</a></p>
+<p>Here&#39;s just some parts of the codes.</p>
 
-<p>Thanks for viewing!</p>
+<pre><code class="r">shinyServer(
+  function(input, output) {
+    output$inputname &lt;- renderPrint({input$name})
+    output$inputdate &lt;- renderPrint({input$date})
+    output$edd &lt;- renderPrint({duedate(input$date)})
+  }
+)
+</code></pre>
 
 </div>
 

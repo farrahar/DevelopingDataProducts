@@ -32,11 +32,22 @@ To use the application, the user must:
 
 The application will calculate the estimated due date upon clicking the 'Calculate' button.
 
-Links
+You can try out the application at: <https://farrahar.shinyapps.io/DevelopingDataProducts/> 
+
+Some codes
 ========================================================
 
-The application has been developed and deployed at: <https://farrahar.shinyapps.io/DevelopingDataProducts/> 
+You can view the entire source codes at: <https://github.com/farrahar/DevelopingDataProducts>
 
-You can view the source codes at: <https://github.com/farrahar/DevelopingDataProducts>
+Here's just some parts of the codes.
 
-Thanks for viewing!
+
+```r
+shinyServer(
+  function(input, output) {
+    output$inputname <- renderPrint({input$name})
+    output$inputdate <- renderPrint({input$date})
+    output$edd <- renderPrint({duedate(input$date)})
+  }
+)
+```
